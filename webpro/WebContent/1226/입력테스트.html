@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css" />
+<style type="text/css">
+	body {
+		margin : 0 500px;
+		min-width: 1000px;
+	}
+	pre{
+		background-color: lightgreen;
+		magin : 0;
+	}
+	#text{
+		vertical-align: top;
+	}
+	label{
+		display: inline-block;
+		width : 80px;
+	}
+	.d{
+		border: 2px solid blue;
+		width : 300px;
+		padding: 15px;
+	}
+	#addr + input{
+		border : 2px solid red;
+	}
+	#addr ~ input{
+		border : 3px dotted green;
+	}
+</style>
+</head>
+<body>
+<!-- 스타일의 순서는 inline > 내부 스타일 > 외부 스타일 순으로 적용한다. -->
+	<pre style="background-color: yellow">
+입력후 전송하면 ~~.jsp로 전송한다.
+전송 하기 위해서는 input 속성에 반드시 name이 있어야 한다.
+title : 마우스를 요소 위에 올려높으면 네모박스 설명이 나타난다.
+required : 필수항목
+autofocus : 실행시 커서의 위치를 설정
+pattern : 정규식
+palceholder : input 필드에 나타나는  예시
+readonly : 읽기전용/ 값을 변경 할 수 없는 필드, 반드시 value속성이 있어야된다.
+	</pre>
+	<h1>회원가입 화면</h1>
+	<form action="입력3.jsp" method="post">
+	<div class="d">
+		<label for="">이름</label>
+		<input type="text" name="name" title="황구" placeholder="이름" required /><br />
+		
+		<label for="" id="addr">주소</label>
+		<input type="text" name="title"/><br />
+		
+		
+		<label for="">이메일</label>
+		<input type="text" /><br />
+		
+		<label for="">성별</label>
+		<input type="radio" value="Male"/>Male
+		<input type="radio" value="Female"/>Female<br />
+		
+		<label for="">내용</label>
+		<textarea id ="text" name="area" rows="10" cols="20"></textarea><br />
+		<br /><br />
+		<input type="submit" value="제출" />
+		<input type="reset" value="초기화" />
+	</div>
+		
+	</form>
+</body>
+</html>
