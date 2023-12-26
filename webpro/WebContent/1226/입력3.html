@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.lab{
+		display : inline-block;
+		width:80px;
+		height : 30px;
+	}
+	#text{
+		vertical-align: top;
+	}
+	option{
+		width : 100px;
+	}
+</style>
+</head>
+<body>
+<form action="입력3.jsp" method="post">
+
+<label class="lab"for="">아이디</label>
+<input type="text" name="id" value="a001" pattern="[a-z][a-zA-Z0-9]{3,9}"/><br />
+
+<label class="lab"for="">이름</label>
+<input type="text" name="name" autofocus required/><br />
+
+<label class="lab"for="">전화번호</label>
+<input type="text" name="tel" placeholder="ex)010-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"/><br />
+
+<label class="lab"for="">이메일</label>
+<input type="text" name="mail" pattern="[a-zA-Z0-9]" /><br />
+
+<label class="lab"for="">제목</label>
+<input type="text" name="title" placeholder="제목입력" title="제목"/><br />
+
+<label id="text" class="lab" for="">내용</label>
+<textarea name="area" rows="5" cols="50"></textarea>
+<br />
+
+<label class="lab" for="">자동차</label>
+<select name="cars1" id="aa">
+	<option >BMW</option>
+	<option selected="selected">BENZ</option>
+	<option >HYUNDAI</option>
+	<option>KIA</option>
+</select>
+<br />
+<br />
+<label class="lab" for="">자동차</label>
+<select name="cars2" multiple="multiple" id="bb">
+	<option >BMW</option>
+	<option selected="selected" >BENZ</option>
+	<option selected="selected" >HYUNDAI</option>
+	<option >KIA</option>
+</select>
+
+<br />
+<input type="submit" value="전송"/>
+<input type="reset" />
+<button type="submit">전송</button>
+<button type="reset">취소</button>
+<input type="image" src="../images/check.png" alt="" />
+<button>전송</button>
+</form>
+</body>
+</html>
