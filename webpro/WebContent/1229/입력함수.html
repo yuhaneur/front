@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+  proc3 = () => {
+	  var num = prompt("점수를 입력하세요");
+	  switch(num/10){
+	  case 9:
+		  str = "A";
+		  break;
+	  case 8:
+		  str = "B";
+		  break;
+	  case 7:
+		  str = "C";
+		  break;
+	  case 6:
+		  str = "D";
+		  break;
+	  case 5:
+		  str = "F";
+		  break;
+	  default :
+		  str = "잘못 입력하셨습니다."
+		  break;
+	  }
+	  
+	  document.querySelector("#result3").innerHTML="학점은 : " + str;
+  }
+
+  proc2 = () => {
+	  var num = prompt("첫번째 숫자 입력");
+	  var que = prompt("연산자 입력", "+ , - , * , /");
+	  var num2 = prompt("두번째 숫자 입력");
+	  
+	  /* if (que == "+"){
+		  res = (parseInt(num)+parseInt(num2));
+	  }else if(que == "-"){
+		  res =  (num - num2);
+	  }else if(que == "*"){
+		  res = (num * num2);
+	  }else if(que == "/"){
+		  res = (num / num2);
+	  }else {
+		  alert("잘못 입력했습니다.")
+	  } */
+	  switch(que){
+	  case "+":
+		  res = (parseInt(num)+parseInt(num2));
+		  break;
+	  case "-":
+		  res =  (num - num2);
+		  break;
+	  case "*":
+		  res = (num * num2);
+		  break;
+	  case "/":
+		  res = (num / num2);
+		  break;
+	  default :
+		  alert("잘못 입력했습니다.");
+	  break;
+	  }
+	  str = num + que + num2 + "=" + res;
+	  document.querySelector("#result2").innerHTML= str;
+	  
+	  
+  }
+  /* 선언 방식이 같은 종류들
+  function proc1(){}
+  proc1 = function(){} 
+  */
+  proc1 = () => {
+	 // 숫자 2개 입력받기
+	 var in1 = prompt("숫자 입력", "1~100사이 정수");
+	 //alert(in1);
+	 var in2 = prompt("1~100사이 정수 입력");
+	 
+	 // 연산
+	 add = parseInt(in1) + parseInt(in2); // 더하기만 타입변환 해준다.
+	 sub = in1 - in2;
+	 multi = in1 * in2;
+	 divide = in1 / in2;
+	 
+	 console.log(add, sub, multi, divide);
+	 // 출력 내용 작성
+	 str = "첫번째 수" + in1 + "<br>";
+	 str += "두번째 수" + in2 + "<br>";
+	 str += "덧셈 : " + add + "<br>";
+	 str += "뺄셈 : " + sub + "<br>";
+	 str += "곱셈 : " + multi + "<br>";
+	 str += "나누셈 : " + divide + "<br>";
+	 
+	 
+	 // 출력 장소 접근
+	 document.querySelector("#result").innerHTML = str;
+  }
+</script>
+<style>
+  .box{
+    border : 1px solid blue;
+    padding : 10px;
+    margin : 20px;
+  }
+  .box input[type=button]{
+    width : 100px;
+    height : 30px;
+    border-radius : 20px;
+    background : blue;
+    color : white;
+  }
+  .box div{
+    border : 1px dotted orange;
+    padding : 10px;
+    margin : 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+  <h4>두 수를 입력하여 사칙연산을 수행한다.</h4>
+  <input type="button" value="확인" onclick="proc1()"/>
+  <br /><br />
+  <div id="result"></div>
+  </div>
+  
+  <br />
+  <div class="box">
+  <h4>두 수와 연산자를 입력하여 사칙연산 수행</h4>
+	  <input type="button" value="확인" onclick="proc2()"/>
+	  <br /><br />
+	  <div id="result2"></div>
+  </div>
+  
+  <br />
+  <div class="box">
+  <h4>점수를 입력 하여 학점 출력</h4>
+	  <input type="button" value="확인" onclick="proc3()"/>
+	  <br /><br />
+	  <div id="result3"></div>
+  </div>
+</body>
+</html>
