@@ -4,31 +4,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-  proc3 = () => {
-	  var num = prompt("점수를 입력하세요");
-	  switch(num/10){
-	  case 9:
-		  str = "A";
-		  break;
-	  case 8:
-		  str = "B";
-		  break;
-	  case 7:
-		  str = "C";
-		  break;
-	  case 6:
-		  str = "D";
-		  break;
-	  case 5:
-		  str = "F";
-		  break;
-	  default :
-		  str = "잘못 입력하셨습니다."
-		  break;
+   proc3 = () => {
+	  var count = prompt("점수를 입력하세요");
+	  switch(parseInt(count/10)){
+		  case 9: case 10:
+			  a ="A";
+			  break;
+		  case 8:
+			  a ="B";
+			  break;
+		  case 7:
+			  a ="C";
+			  break;
+		  case 6:
+			  a ="D";
+			  break;
+		  case 5:
+			  a ="E";
+			  break;
+		  default :
+			  a ="F";
+			  break;
 	  }
-	  
-	  document.querySelector("#result3").innerHTML="학점은 : " + str;
-  }
+	  var str = count+"은" +a +"입니다";
+	  document.querySelector("#result3").innerHTML=str;
+  } 
 
   proc2 = () => {
 	  var num = prompt("첫번째 숫자 입력");
