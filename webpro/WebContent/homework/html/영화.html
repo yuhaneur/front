@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <script>
-  function video() {
-	
+videoUrl ="";
+  function video(videoUrl) {
+    var videoFrame=document.querySelector("#videoFrame");
+    videoFrame.src=videoUrl;
 }
 </script>
 <style>
   body{
   	height: 100%;
   }
+  div{
+  
+  }
   img{
-    width : 250px;
+    width : 100%;
     height: 280px;
-    margin-left: 13px;
-    margin-top :2px;
   }
   #parent{
     height : 80%;
@@ -34,13 +37,13 @@
 </style>
 </head>
 <body>
- 	<iframe src ="https://youtu.be/B7CuR4qj-bg"></iframe>
+ 	<iframe id="videoFrame"></iframe>
  <div id="parent">
     <div>
-      <img src="../../images/영화1.jpg" alt=""/>
+      <img id="img1" src="../../images/영화1.jpg" alt="" onclick="video('https://www.youtube.com/embed/mKvQ_Rhf8Kc?si=NYbiXqmKufAypYNv')"/>
     </div>
     <div>
-      <img src="../../images/영화2.jpg" alt="" />
+      <img id="img2" src="../../images/영화2.jpg" alt="" onclick="video('https://www.youtube.com/embed/aI5wejCDXtg?si=sr5JUfUys3AZZBNA')"/>
     </div>
   </div>
 </body>

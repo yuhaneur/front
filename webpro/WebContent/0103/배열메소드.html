@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+  /* arr=[];
+  arr=new Array();
+  arr[0] = "ㅅㄱ";
+  arr[1] = "ㅄㅇ"; */
+  
+  arr = ["ㅅㄱ","ㅂㅅㅇ","ㅍㅇㅇㅍ","ㅂㄴㄴ","ㅅㄱ","ㅊㅇ","ㅈㄷ","ㅅㄱ"];
+  
+  proc1 = () => {
+	  vidx = arr.indexOf("ㅅㄱ");
+	  alert(vidx);
+  }
+  proc2 = () => {
+	  vidx = arr.lastIndexOf("ㅅㄱ");
+	  alert(vidx);
+	  
+  }
+</script>
+</head>
+<body>
+
+<div class="box">
+    <h4></h4>
+    <input type="button" value="indexOf" onclick="proc1()" />
+    <input type="button" value="lastIndexOf" onclick="proc2()" /> <br /><br />
+    <div id="result1"></div>
+    <div id="result2"></div>
+  </div>
+</body>
+</html>

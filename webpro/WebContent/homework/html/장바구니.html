@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+        table{
+            border:2px solid silver;
+            border-collapse: collapse;
+            text-align: center;
+            position: relative;
+          
+            top: 200px;
+            left: 600px;
+        }
+        td{
+            border: 1px solid silver;
+           width: 150px;
+           height: 40px;
+        }
+        tr:first-child{
+            font-weight: bolder;
+        }
+        tr>td:nth-child(2){
+            width: 200px;
+        }
+        input{
+            text-align: center;
+            height: 80%;
+        }
+        h1{
+            position: relative;
+            top: 100px;
+            text-align: center;
+        }
+        .check{
+            width: 80px;
+            position: relative;
+            top: 250px;
+            left: 800px;
+        }
+        a{
+            position: relative;
+            left: 600px;
+            top: 280px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>장바구니 페이지</h1>
+    <table>
+        <tr>
+            <td>품목</td>
+            <td>가격</td>
+            <td>수량</td>
+            <td>합계</td>
+        </tr>
+        <tr>
+            <td>컴퓨터 세트</td>
+            <td name="2000000">2,000,000원</td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+            
+        </tr>
+        <tr>
+            <td>티셔츠</td>
+            <td name="50000">50,000원</td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+        </tr>
+        <tr>
+            <td>음악파일</td>
+            <td name="1000">1,000원</td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+        </tr>
+        <tr>
+            <td>영화파일</td>
+            <td name="5000">5,000원</td>
+            <td><input type="number" placeholder="0"></td>
+            <td><input type="number" placeholder="0"></td>
+        </tr>
+    </table>
+    <input class="check" type="button" value="계산">
+    <input class="check" type="submit" value="구매">
+    <input class="check" type="reset" value="초기화"><br>
+    <a href="홈페이지.html">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+  proc1 = (calc) =>{
+	  // 입력받은 값을 가져온다
+	  let xvalue = document.querySelector("#x").value;
+	  let yvalue = document.querySelector("#y").value;
+	  // 연산자 비교
+	  switch(calc){
+	  case "+" :
+		  x = add(parseInt(xvalue), parseInt(yvalue));
+		  break;
+	  case "-" :
+		  x = minus(xvalue, yvalue);
+		  break;
+	  case "*" :
+		  x = multi(xvalue, yvalue);
+		  break;
+	  case "/" :
+		  x = divide(xvalue, yvalue);
+		  break;
+	  }
+	  
+	  document.querySelector("#result1").innerHTML = x;
+	  document.querySelector("#sp1").innerHTML = xvalue;
+	  document.querySelector("#sp2").innerHTML = yvalue;
+	  document.querySelector("#sp3").innerHTML = x;
+	  // 함수를 이용한 연산
+  }
+  
+  add = (x,y) =>{
+	  return x + y;
+  }
+  minus = (x,y) =>{
+	  return x - y;
+  } 
+  multi = (x,y) =>{
+	  return x * y;
+  }
+  divide = (x,y) =>{
+	  return x / y;
+  }
+  
+</script>
+</head>
+<body>
+
+  <div class="box">
+    <h4></h4>
+    x : <input type="text" id="x"/> <br />
+    y : <input type="text" id="y" /> <br />
+    결과 : <input type="text" id="res" /> <br />
+    <input type="button" value="확인+" onclick="proc1('+')" /> 
+    <input type="button" value="확인-" onclick="proc1('-')" /> 
+    <input type="button" value="확인*" onclick="proc1('*')" />
+    <input type="button" value="확인/" onclick="proc1('/')" /> 
+    <p>첫번째 값 :<span id="sp1"></span> </p>
+	<p>두번째 값 :<span id="sp2"></span> </p>
+	<p>결과 :<span id="sp3"></span> </p>
+    <div id="result1"></div>
+  </div>
+</body>
+</html>

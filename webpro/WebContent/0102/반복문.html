@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css" />
+<script>
+// function proc1(){}
+
+  proc1 = () =>{
+	  var str = "";
+	  var sum = 0;
+	  for(var i=1;i<=10;i++){
+		  str += i + "<br>";
+		  sum += i;
+	  }
+	  //출력 내용 작성
+	  res = str + "결과는 : " + sum;
+	  
+	  document.querySelector("#result1").innerHTML = res;
+	  //document.querySelector("#result1").innerHTML += str;
+	  //document.querySelector("#result1").innerHTML += sum;
+  }
+  proc2 = () => {
+	  // 객체 선언
+	  myCar = {model : "bmw" , name : "x5", year : 2010 };
+	  
+	  //myCar[model] = myCar[model] //myCar[model] =bmw
+	  //myCar[name] = myCar[name] //myCar[name] =x5
+	  //myCar[year] = myCar[year] //myCar[year] = 2010
+	  
+	  str = "";
+	  for(x in myCar){
+		  str += ` myCar[${x}] :  ${myCar[x]} <br>` 
+	  }
+	  
+	  document.getElementById("result2").innerHTML = str;
+  }
+  
+</script>
+<style>
+  
+</style>
+</head>
+<body>
+  <div class="box">
+    <h4>1~10까지의 합 구하기</h4>
+    <input type="button" value="확인" onclick="proc1()" /> <br /><br />
+    <div id="result1"></div>
+  </div>
+  
+  <div class="box">
+    <h4>for/in을 이용한 객체 접근</h4>
+    <h4>객체 { key : value , key : value  } </h4>
+    <input type="button" value="확인" onclick="proc2()" /> <br /><br />
+    <div id="result2"></div>
+  </div>
+</body>
+</html>
