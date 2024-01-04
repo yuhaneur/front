@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+  today = new Date();
+  
+  proc1 = () => {
+	  // 태어난 날
+	  myDay = new Date(1996,01,14);
+	  cTime = today.getTime();
+	  myTime = myDay.getTime();
+	  
+	  console.log(cTime +"/",myTime)
+	  times = cTime - myTime;
+	  days = times / 1000 /60 / 60 / 24 / 365;
+	  str = "현재 : " + today.toLocaleDateString() + "<br>";
+	  str += "내 생일 : " + myDay.toLocaleDateString() + "<br>";
+	  str += days + " 년 동안 살고 있습니다.";
+	  
+	  document.getElementById('result1').innerHTML = str;
+  }
+  
+  proc2 =() =>{
+	  cTime = today.getTime();
+	  hTime = 100*24*60*60*1000;
+	  times = parseInt(cTime) + parseInt(hTime);
+	  
+	  time = new Date(times);
+	  str = time.toLocaleDateString() + " 입니다."
+	  document.getElementById('result2').innerHTML = str;
+  }
+  
+  proc3 =() =>{
+	  // 입력된 날짜 가져오기
+	  invalue = document.getElementById('inday').value;
+	  
+	  inday = new Date(invalue);
+	  
+	  //현재 , 선택날짜 사이 간격 구하기
+	  hTime =today.getTime();
+	  sTime = inday.getTime();
+	  
+	  times =sTime - hTime;
+	  
+	  // 일수 계산
+	  days = parseInt(times/1000/60/60/24);
+	  console.log(days);
+	  //비교
+	  if(days>7){
+		  str = "교환/환불/반품 불가";
+	  }else{
+		  str = "교환/환불/반품 가능";
+	  }
+	  
+	  document.getElementById('result3').innerHTML = str;
+  }
+</script>
+</head>
+<body>
+
+<div class="box">
+    <h4>태어난 날로 부터 현재까지 경과한 날</h4>
+    <input type="button" value="확인" onclick="proc1()" /> <br /><br />
+    <div id="result1"></div>
+  </div>
+
+<div class="box">
+    <h4>오늘로부터 100일 후 </h4>
+    <input type="button" value="확인" onclick="proc2()" /> <br /><br />
+    <div id="result2"></div>
+  </div>
+
+<div class="box">
+    <h4>선택날로부터 현재 까지 7일 경과 비교<br /> 반품/환불/교환 여부 결정 </h4>
+       날짜선택 <input type="date" id = "inday"/>
+    <input type="button" value="확인" onclick="proc3()" /> <br /><br />
+    <div id="result3"></div>
+  </div>
+</body>
+</html>
