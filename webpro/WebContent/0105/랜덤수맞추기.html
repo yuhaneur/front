@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+ rand = parseInt(Math.random() * 51);
+ count = 0;
+ res = "";
+ 
+  proc1 = () =>{
+	  
+	input = document.getElementById('txt').value;
+	input = input.trim();
+	res += input + " ";
+	count ++;
+	if(rand == input){
+		str = " 정답입니다."
+		a = `입력 수들 : ${res} <br>`;
+		a += `입력 횟수 : ${count} <br>`;
+		a += str;
+	}else if(rand > input){
+		a = " 업";
+		
+	}else{
+		a = " 다운 "
+	}
+	document.getElementById('result1').innerHTML= a;
+  }
+  
+  proc2 = () =>{
+	  str = ["가위","바위","보"];
+	  random = parseInt(Math.random()* str.length);
+	  
+	  com = str[random];
+	  
+	  user = prompt("가위,바위,보 중에 하나 입력");
+	  
+	  if(com == user){
+		  res ="비겼습니다.";
+	  }else if((com=="가위" && user=="바위") ||(com=="바위" && user=="보")||(com=="보" && user=="가위")){
+		  res = "user 가 이겼습니다."
+	  }else{
+		  res = "user 가 졌습니다."
+	  }
+	  dab = `com : ${com} <br>`;
+	  dab += `user : ${user} <br>`;
+	  dab += `결과 : ${res}`;
+	  document.getElementById('result2').innerHTML= dab;
+  }
+  proc3 = () =>{
+	  arr = [];
+	  while(true){
+		  rand = parseInt(Math.random()*45+1);
+		  
+		  idx= arr.indexOf(rand);
+		  if(idx == -1){
+			  arr.push(rand);
+		  }
+		  
+		  if(arr.length ==6)break;
+	  }
+	  document.getElementById('result3').innerHTML = arr;
+	  
+  }
+</script>
+</head>
+<body>
+
+  <div class="box">
+    <h4>랜덤 수 맞추기</h4>
+    수 입력 : <input type="text" id="txt" />
+    <input type="button" value="확인" onclick="proc1()" /> <br /><br />
+    <div id="result1"></div>
+  </div>
+  
+  <div class="box">
+    <h4>가위 바위 보 게임을 할 수 있는 프로그램을 작성하시오. <br />
+(컴퓨터는 랜덤, 사용자는 prompt로 입력 받아서 처리)</h4>
+    <input type="button" value="확인" onclick="proc2()" /> <br /><br />
+    <div id="result2"></div>
+  </div>
+
+  <div class="box">
+    <h4>로또 번호를 생성하는 프로그램을 작성하시오. <br />
+(1번 ~ 45번 중 6개의 번호를 추첨)</h4>
+    <input type="button" value="확인" onclick="proc3()" /> <br /><br />
+    <div id="result3"></div>
+  </div>
+</body>
+</html>
