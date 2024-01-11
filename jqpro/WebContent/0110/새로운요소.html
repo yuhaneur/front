@@ -17,13 +17,41 @@
 		
 		res = document.getElementById('result1');
 		res.appendChild(vp);
+		vp.onclick = function(){
+			
+		}
+		vp.onclick =hello();
 	}
 	
 	proc2 = () =>{
 		// 새로운 태그 만들기
-		vhtml = $('<p class="pp">Hello</p>');
+		vhtml = $('<p class="pp" onclick="hello()">Hello</p>');
 		//result2에 추가
 		$('#result2').append(vhtml);
+	}
+	hello=()=>{
+		alert("Hello");
+	}
+	
+	proc3 = () =>{
+		//vp = $('<p></p>', { })
+		vp = $('<p/>', {
+			'class' : 'pp',
+			'id' : 'p1',
+			'text' : 'hello',
+			'click': function(){
+				
+				cr= Math.floor(Math.random()*256);
+				cg= Math.floor(Math.random()*256);
+				cv= Math.floor(Math.random()*256);
+				
+				//alert("Hello");
+				this.style.color = `rgb(${cr},${cg},${cv})`;
+				$(this).css('font-size','+=5px');
+				$(this).css('color', `rgb(${cr},${cg},${cv})`);
+			}
+		})
+		$('#result3').append(vp);
 	}
 </script>
 </head>
@@ -39,6 +67,11 @@
     <h4></h4>
     <input type="button" value="확인" onclick="proc2()" /> <br /><br />
     <div id="result2"></div>
+  </div>
+<div class="box">
+    <h4></h4>
+    <input type="button" value="확인" onclick="proc3()" /> <br /><br />
+    <div id="result3"></div>
   </div>
 </body>
 </html>
