@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../CSS/public.css">
+<script>
+	arr = ["안녕","하세요","반갑","습니다","행복","하세요","즐겁","습니다","하하하하하하하"];
+proc1=()=>{
+	ran = Math.floor(Math.random()*arr.length);
+	
+	//문자열선택 - textNode로생성
+	vText = document.createTextNode(arr[ran]);
+	// p태그 생성
+	vp= document.createElement('p');
+	// p태그에 vText를 추가
+	rr = vp.appendChild(vText);
+	
+	res = document.getElementById('result1');
+	res.appendChild(vp);
+	
+}
+proc2=()=>{
+	res = document.getElementById('result1');
+	
+	ch = res.firstChild;
+	res.removeChild(ch);
+}
+
+proc3 =() =>{
+	ran = Math.floor(Math.random()*arr.length);
+	
+	vText = document.createTextNode(arr[ran]);
+	
+	res = document.querySelector("#result3");
+	
+	vinput = document.createElement('input');
+	vinput.type="button";
+	vinput.value="삭제";
+	vinput.onclick = function(){
+		parent = this.parentNode;
+		parent.remove();
+	}
+	
+	vp = document.createElement('p');
+	
+	tx = vp.appendChild(vText);
+	tin = vp.appendChild(vinput);
+	res.appendChild(vp);	
+}
+
+dang = null;
+start = (but) => {
+	// but 매개변수 : 시작버튼, 지역변수
+	but.style.display ="none";
+	
+	// 종료시 style 설정한 테두리 없애기
+	if(dang != null) {
+		dang.style.border="none";
+	}
+	
+	glbut = but;
+	
+	//첫번째 이미지를 선택
+	vres = document.getElementById('result4');
+	
+	
+	
+	vid = setInterval(function(){
+		vimg = vres.firstChild;
+		vres.appendChild(vimg); // 이동의 의미로 실행 앞에꺼 짤라서 뒤로간다.		
+	}, 1000);
+}
+
+stop = () => {
+	glbut.style.display ="inline";
+	
+	clearInterval(vid);
+	
+	ln = document.querySelectorAll('#result4 img');
+	imgln = ln.length;
+	rand = Math.floor(Math.random()*imgln);
+	dang = ln[rand];
+	
+	dang.style.border ="1px solid red";
+}
+</script>
+<style>
+img {
+	width: 80px;
+	height: 80px;
+}
+</style>
+</head>
+<body>
+
+	<div class="box">
+		<h4></h4>
+		<input type="button" value="추가" onclick="proc1()" /> <input
+			type="button" value="삭제" onclick="proc2()" /> <br /> <br />
+		<div id="result1"></div>
+	</div>
+
+	<div class="box">
+		<h4></h4>
+		<input type="button" value="추가" onclick="proc3()" /> <br /> <br />
+		<div id="result3"></div>
+	</div>
+
+	<div class="box">
+		<h4></h4>
+		<input type="button" value="시작" onclick="start(this)" /> <input
+			type="button" value="종료" onclick="stop()" /> <br /> <br />
+		<div id="result4">
+			<img src="../images/원숭이.png" alt="원숭이.png" /> <img
+				src="../images/양.png" alt="양.png" /> <img src="../images/돼지.png"
+				alt="돼지.png" /> <img src="../images/배경.png" alt="배경.png" /> <img
+				src="../images/펭귄.png" alt="펭귄.png" /> <img src="../images/코알라.jpg"
+				alt="코알라.jpg" /> <img src="../images/호랑이.jpg" alt="호랑이.jpg" />
+		</div>
+	</div>
+</body>
+</html>
